@@ -1,0 +1,49 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type RecordContent {
+  key: String!
+  value: String!
+}
+
+type Record {
+  id: ID!
+  type: String!
+  content: [RecordContent!]!
+  date: Date!
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+type Query {
+  Record(id: String!): Record!
+  Records(skip: Int = 0, take: Int = 25): [Record!]!
+}
+
+type Mutation {
+  addRecord(newRecordData: NewRecordInput!): Record!
+  removeRecord(id: String!): Boolean!
+}
+
+input NewRecordInput {
+  type: RecordTypes!
+  content: [NewRecordContent!]!
+  date: Date!
+}
+
+enum RecordTypes {
+  Food
+}
+
+input NewRecordContent {
+  key: String!
+  value: String!
+}
+
+type Subscription {
+  RecordAdded: Record!
+}
