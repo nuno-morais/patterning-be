@@ -23,6 +23,12 @@ export class CreateRecord1603398538469 implements MigrationInterface {
                 isNullable: false
             },
             {
+                name: 'user_id',
+                type: 'varchar',
+                length: '255',
+                isNullable: false
+            },
+            {
                 name: 'date',
                 type: 'timestamptz',
                 isNullable: false

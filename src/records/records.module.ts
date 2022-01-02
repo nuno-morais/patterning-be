@@ -10,6 +10,11 @@ import { RecordsService } from './records.service';
   imports: [
     TypeOrmModule.forFeature([Record])
   ],
-  providers: [RecordsConverter, RecordsResolver, RecordsService, DateScalar],
+  providers: [
+    RecordsConverter,
+    RecordsResolver,
+    RecordsService,
+    DateScalar
+  ],
 })
 export class RecordsModule {}
